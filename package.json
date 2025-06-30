@@ -30,7 +30,6 @@
     "@ionic-native/file": "^5.36.0",
     "@ionic-native/file-transfer": "^5.36.0",
     "@ionic-native/http": "^5.36.0",
-    "@ionic-native/paypal": "^5.36.0",
     "@ionic/angular": "^6.0.0",
     "@techiediaries/ngx-qrcode": "^9.1.0",
     "cordova-ios": "^7.0.1",
@@ -102,8 +101,6 @@
       "cordova-plugin-camera": {
         "ANDROIDX_CORE_VERSION": "1.6.+"
       },
-      "com.paypal.cordova.mobilesdk": {},
-      "cordova-plugin-media-capture": {},
       "cordova-plugin-googleplus": {
         "PLAY_SERVICES_VERSION": "15.0.1"
       },
@@ -111,9 +108,6 @@
         "ANDROIDBLACKLISTSECURESOCKETPROTOCOLS": "SSLv3,TLSv1"
       },
       "cordova-plugin-whitelist": {}
-    },
-    "platforms": [
-      "android"
-    ]
+    }
   }
 }
