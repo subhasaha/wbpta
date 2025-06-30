@@ -89,23 +89,19 @@
   "description": "An Ionic project",
   "cordova": {
     "plugins": {
-      "cordova-plugin-crop": {},
       "cordova-plugin-file": {},
       "cordova-plugin-statusbar": {},
       "cordova-plugin-device": {},
       "cordova-plugin-splashscreen": {},
       "cordova-plugin-ionic-webview": {},
       "cordova-plugin-ionic-keyboard": {},
-      "cordova-plugin-camera": {
-        "ANDROIDX_CORE_VERSION": "1.6.+"
-      },
+      
       "cordova-plugin-googleplus": {
         "PLAY_SERVICES_VERSION": "15.0.1"
       },
       "cordova-plugin-advanced-http": {
         "ANDROIDBLACKLISTSECURESOCKETPROTOCOLS": "SSLv3,TLSv1"
-      },
-      "cordova-plugin-whitelist": {}
+      }
     }
   }
 }
