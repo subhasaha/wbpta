@@ -1,0 +1,42 @@
+<ion-header no-border>
+  <ion-toolbar color="primary">
+      <ion-buttons slot="start">
+          <ion-menu-button></ion-menu-button>
+      </ion-buttons>
+      <ion-title>Reset Password</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content fullscreen="true" slot="fixed">
+  <ion-grid>
+      <ion-row>
+          <ion-col>
+              <div class="card-body">
+                  <div class="loginPg">
+                      <div class="loginBx">
+                          <form [formGroup]="forgetresetForm" (ngSubmit)="submit()">
+
+                              <div class="form-group">
+                                  <input type="text" class="form-control" placeholder="New Password *" formControlName="newpassword">
+                                  <div class="error" *ngIf="forgetresetForm.controls['newpassword'].errors?.required &&
+                                  forgetresetForm.controls['newpassword'].touched">New Password is required</div>
+                              </div>
+                              <div class="form-group">
+                                  <input type="text" class="form-control" placeholder="Confirm Password *" formControlName="confpassword">
+                                  <div class="error" *ngIf="forgetresetForm.controls['confpassword'].errors?.required &&
+                                  forgetresetForm.controls['confpassword'].touched">Confirm password is required</div>
+                               <mat-error *ngIf="forgetresetForm.hasError('notSame')">
+                                Passwords do not match
+                              </mat-error> 
+                              </div>
+
+                              <div class="text-center">
+                                  <ion-button [disabled]="!forgetresetForm.valid" type="submit" color="primary" shape="round" expand="block">RESET PASSWORD</ion-button>
+                              </div>
+                          </form>
+                      </div>
+                  </div>
+              </div>
+          </ion-col>
+      </ion-row>
+  </ion-grid>
+</ion-content>

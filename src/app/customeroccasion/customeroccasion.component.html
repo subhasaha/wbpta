@@ -1,0 +1,87 @@
+<ion-header no-border>
+  <ion-toolbar color="primary">
+      <ion-buttons slot="start">
+          <ion-menu-button></ion-menu-button>
+      </ion-buttons>
+      <ion-title>Customer booking occasion</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content fullscreen="true" slot="fixed">
+  <ion-grid>
+      <ion-row>
+          <ion-col>
+              <div class="card-body">
+                  <div class="loginPg">
+                      <div class="loginBx">
+                        <form [formGroup]="occasionForm" (ngSubmit)="submit()">
+                          <input type="hidden" formControlName="celeb_id"/>
+                          <div id="container">
+                            <ion-list>
+                              <ion-item>
+                                <ion-label>Choose Occasion</ion-label>
+                                <ion-select formControlName="occation_type">
+                                  <ion-select-option *ngFor="let item of occTypes" value="{{item.oc_id}}">{{item.oc_name}}</ion-select-option>
+                                  
+                                </ion-select>
+                              </ion-item>
+                              <!-- <div *ngFor="let error of errorMessages.name">
+                                <ng-container *ngIf="name.hasError(error.type) && (name.dirty || name.touched)">
+                                  <small class ="error-mesaage">{{error.message}}</small>
+                                </ng-container>
+                              </div> -->
+                      
+                              
+                                <br/>
+                                <ion-label style="margin-left: 20px;">Date Of Occation</ion-label>
+                                <br/><br/>
+                                <ion-datetime presentation="date" [min]="date" style="width: 91%; margin: 0 auto;" formControlName="occation_date" displayFormat="YYYY-MM-DD" placeholder="Select Date"></ion-datetime>
+                              
+                              <br/>
+                              <ion-label style="margin-left: 20px;">Search Celebrity</ion-label>
+                              <ion-searchbar formControlName="search" type="text" debounce="500" (ionInput)="getItems($event)"></ion-searchbar>
+                              <ion-list *ngIf="isItemAvailable">
+                                <ion-item *ngFor="let item of itemsAfterFilter" (click)="loadData(item)">
+                                  <ion-avatar slot="start">
+                                    <img *ngIf="item.profile_pic" src="{{ item.profile_pic }}">
+                                    <img *ngIf="!item.profile_pic" src="https://yiiu.vip/front-end/assets/images/demo_yiiu_user.png">
+                                    
+                                  </ion-avatar>
+                                  <ion-label>
+                                    {{ item.name }}
+                                  </ion-label>
+                                  
+                                </ion-item>
+                              </ion-list>
+                              <ion-item *ngIf="isExpAreasAvailable">
+                                <ion-label>Choose Expertise Areas</ion-label>
+                                <ion-select formControlName="expertise_areas">
+                                  <ion-select-option *ngFor="let item of expertiseAreas| keyvalue" value="{{item.key}}">{{item.value.name}} - ${{item.value.amount}}</ion-select-option>
+                                  
+                                </ion-select>
+                              </ion-item>
+                              <br/>
+                              <ion-card *ngIf="isExpAreasAvailable">
+                                <video controls preload="auto" style="width: 100%" src="https://yiiu.vip/{{introVideo.cvideos}}"></video>
+                              </ion-card>
+
+                              <ion-item>
+                                <ion-label>Purpose</ion-label>
+                                <ion-textarea formControlName="Purpose" placeholder="Enter Purpose"></ion-textarea>
+                              </ion-item>
+                      
+                      
+                      
+                              <ion-button type="submit" expand="block">
+                                Submit
+                                <ion-icon slot="end" name="create"></ion-icon>
+                              </ion-button>
+                            </ion-list>
+                          </div>
+                        </form>
+                      </div>
+                  </div>
+              </div>
+          </ion-col>
+      </ion-row>
+  </ion-grid>
+</ion-content>

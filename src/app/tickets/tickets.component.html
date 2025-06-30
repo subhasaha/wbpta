@@ -1,0 +1,68 @@
+<ion-header no-border>
+    <ion-toolbar color="primary">
+       <ion-buttons slot="start">
+          <ion-menu-button></ion-menu-button>
+       </ion-buttons>
+       <ion-title>My Tickets</ion-title>
+    </ion-toolbar>
+ </ion-header>
+ <ion-content fullscreen="true" slot="fixed">
+    <ion-grid>
+       <ion-row>
+          <ion-col>
+             <div >
+                <div class="loginPg">
+                   <div class="loginBx">
+                      <ng-container *ngIf="celebRequests">
+                         <div class="events-area-details" *ngFor="let req of celebRequests; let i = index">
+                            <div class="container-fluid" *ngIf="req.has_book[0]=='Y'">
+                               <div class="user-ticket-list ticketList">
+                                  <div class="event-header">
+                                     <h3>{{req.event_date | date:'EEEE, MMMM d, y'}}</h3>
+                                  </div>
+                                  <ng-container  *ngFor="let booking of req.event_details[0].bookings; let j = index">
+
+                                  
+                                  <div class="row" *ngFor="let _ of [].constructor(booking.amount); let k = index">
+                                     <div class="col-12 mb-2 mb-sm-4" style="margin-bottom: 20px;">
+                                        <div class="event-bookticket">
+                                           <div class="bookticket-left" style="background:url('/assets/images/user-ticket-bg.jpeg')">
+                                              <div class="ticket-logo">
+                                                 <img src="/assets/images/logoYiiu-ticket.png" class="img-fluid">
+                                              </div>
+                                              <div class="event-name-print position-relative">
+                                                 <h1 style="color: white;">{{req.event_details[0].title}}</h1>
+                                                
+                                                 <h4>Purchased by: <br><span>{{user.fullname}}</span></h4>
+                                              </div>
+                                              <div class="event-time-venu position-relative">
+                                                 <h3>{{req.event_details[0].event_time | date:'d MMMM'}} | {{req.event_details[0].event_time | date:'h:mm a'}}</h3>
+                                                 <p>{{req.event_details[0].location}}</p>
+                                                 <p>Ticket No.: {{booking.ticket_id}}/{{k+1}}</p>
+                                              </div>
+                                           </div>
+                                           <div class="bookticket-right">
+                                              <div class="top-circle-area"></div>
+                                              <div class="top-circle-area-bottom"></div>
+                                              <div class="booking-right-text">
+                                                 <p>{{booking.ticket_id}}/1</p>
+                                                 
+                                                 <h1>{{req.event_details[0].title}}</h1>
+                                              </div>
+                                           </div>
+                                           <div onclick="PrintDiv('book_YIIU-1677915802-1_1')" class="download-icon-pdf"><i class="fas fa-file-download"></i></div>
+                                        </div>
+                                     </div>
+                                  </div>
+                                </ng-container>
+                               </div>
+                            </div>
+                         </div>
+                      </ng-container>
+                   </div>
+                </div>
+             </div>
+          </ion-col>
+       </ion-row>
+    </ion-grid>
+ </ion-content>

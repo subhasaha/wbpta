@@ -1,0 +1,38 @@
+<ion-header no-border>
+  <ion-toolbar color="primary">
+      <ion-buttons slot="start">
+          <ion-menu-button></ion-menu-button>
+      </ion-buttons>
+      <ion-title>Invite Friends</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content fullscreen="true" slot="fixed">
+  <ion-grid>
+      <ion-row>
+          <ion-col>
+              <div class="card-body">
+                  <div class="loginPg">
+                      <div class="loginBx">
+                          <form [formGroup]="invitefrndForm" (ngSubmit)="submit()">
+                            <div class="form-group">
+                              <input type="text" class="form-control" formControlName="friendname" placeholder="Friend's Name">
+                              <div class="error" *ngIf="invitefrndForm.controls['friendname'].errors?.required &&
+                              invitefrndForm.controls['friendname'].touched">Name is required</div>
+                          </div>
+                            <div class="form-group">
+                              <input type="email" formControlName="friendemail" class="form-control" placeholder="Friend's Email">
+                              <div class="error" *ngIf="invitefrndForm.controls['friendemail'].errors?.required &&
+                              invitefrndForm.controls['friendemail'].touched">Email is required</div>
+                          </div>
+                          
+                              <div class="text-center">
+                                  <ion-button [disabled]="!invitefrndForm.valid" type="submit" color="primary" shape="round" expand="block">SEND INVITATION</ion-button>
+                              </div>
+                          </form>
+                      </div>
+                  </div>
+              </div>
+          </ion-col>
+      </ion-row>
+  </ion-grid>
+</ion-content>

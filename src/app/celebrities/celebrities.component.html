@@ -1,0 +1,134 @@
+<ion-header no-border>
+  <ion-toolbar color="primary">
+     <ion-buttons slot="start">
+        <ion-menu-button></ion-menu-button>
+     </ion-buttons>
+     <ion-title>Search Celebrities</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content fullscreen="true" slot="fixed">
+
+ 
+  
+  <ion-grid>
+     <ion-row>
+        <ion-col>
+           <div >
+              <div class="loginPg">
+                 <div class="loginBx">
+<div class="main-dashboard-area">
+	<div class="container-fluid">
+		<div class="celebriti-list-items">
+            <ul class="nav nav-tabs" id="myTab" role="tablist" style="padding-left: 0px;
+            padding-bottom: 15px;">
+                <li class="nav-item waves-effect waves-light">
+                    <a class="nav-link active" id="all-tab" data-toggle="tab" href="/celebrities#celeb-all" role="tab" aria-controls="all" aria-selected="true">All</a>
+                </li>
+                <li class="nav-item waves-effect waves-light" *ngFor="let req of expertise; let i = index">
+                    <a class="nav-link" id="id_{{req.id}}" data-toggle="tab" href="/celebrities#celeb-{{req.id}}" role="tab" aria-controls="{{req.name}}" aria-selected="false">{{req.name}}</a>
+                </li>
+                
+            </ul>
+            <div class="tab-content" id="myTabContent">
+                <div class="tab-pane fade show active" id="celeb-all"  role="tabpanel" aria-labelledby="all-tab">
+                    <div class="row">
+
+                        <div class="col-6" *ngFor="let req of celebRequests; let i = index">
+                            <div class="celebrity-item">
+                                <div class="celebrity-img">
+                                    <img src="https://yiiu.vip/{{req.profile_pic}}" *ngIf="req.profile_pic" alt="{{req.name}}" class="image"/>
+                                    <img src="https://yiiu.vip/logoYiiu.png" *ngIf="!req.profile_pic" alt="{{req.name}}" class="image"/>
+                                </div>
+                                <div class="cele-details">
+                                    <h3>{{req.name}}</h3>
+                                    
+                                    <div class="star-rating">
+                                      <ng-container *ngFor="let i of [1,2,3,4,5]">
+                                          <ion-icon slot="icon-only" *ngIf="i<=req.avg_rate" style="font-size:23px; color: yellow; margin-top:8px;" name="star">
+                                          </ion-icon>
+                                          <ion-icon slot="icon-only" *ngIf="i>req.avg_rate" style="font-size:23px;  margin-top:8px;" name="star-outline">
+                                          </ion-icon>
+                                        
+                                      </ng-container>
+                                    </div>
+                                </div>
+                                <div class="overlay">
+                                    <div class="text">
+                                        <h3>{{req.name}}</h3>
+                                        <a routerLink="/occasion" [queryParams]="{ id: req.id}" class="book-btn">Book Now</a>
+                                        <div class="star-rating">
+                                          <ng-container *ngFor="let i of [1,2,3,4,5]">
+                                            <ion-icon slot="icon-only" *ngIf="i<=req.avg_rate" style="font-size:23px; color: yellow; margin-top:8px;" name="star">
+                                            </ion-icon>
+                                            <ion-icon slot="icon-only" *ngIf="i>req.avg_rate" style="font-size:23px;  margin-top:8px;" name="star-outline">
+                                            </ion-icon>
+                                          
+                                        </ng-container>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div> 
+                         
+                        
+                        
+                                                                            
+                    </div>
+                </div>
+                <ng-container *ngFor="let req of expertise; let i = index">
+                  <div class="tab-pane fade" id="celeb-{{req.id}}" role="tabpanel" aria-labelledby="celeb-{{req.id}}">
+                    <div class="row">
+                    	<div class="col-6" *ngFor="let industry of industries[req.id]; let i = index">
+                            <div class="celebrity-item">
+                                <div class="celebrity-img">
+                                  <img src="https://yiiu.vip/{{industry.profile_pic}}" *ngIf="industry.profile_pic" alt="{{industry.name}}" class="image"/>
+                                  <img src="https://yiiu.vip/logoYiiu.png" *ngIf="!industry.profile_pic" alt="{{industry.name}}" class="image"/>
+                                </div>
+                                <div class="cele-details">
+                                  <h3>{{industry.fullname}}</h3>
+                                  
+                                    <div class="star-rating">
+                                      <ng-container *ngFor="let i of [1,2,3,4,5]">
+                                        <ion-icon slot="icon-only" *ngIf="i<=industry.avg_rate" style="font-size:23px; color: yellow; margin-top:8px;" name="star">
+                                        </ion-icon>
+                                        <ion-icon slot="icon-only" *ngIf="i>industry.avg_rate" style="font-size:23px;  margin-top:8px;" name="star-outline">
+                                        </ion-icon>
+                                      
+                                    </ng-container>
+                                    </div>
+                                </div>
+                                <div class="overlay">
+                                    <div class="text">
+                                       <h3>{{industry.name}}</h3>
+                                        <a routerLink="/occasion" [queryParams]="{ id: industry.id}" class="book-btn">Book Now</a>
+                                        <div class="star-rating">
+                                          <ng-container *ngFor="let i of [1,2,3,4,5]">
+                                            <ion-icon slot="icon-only" *ngIf="i<=industry.avg_rate" style="font-size:23px; color: yellow; margin-top:8px;" name="star">
+                                            </ion-icon>
+                                            <ion-icon slot="icon-only" *ngIf="i>industry.avg_rate" style="font-size:23px;  margin-top:8px;" name="star-outline">
+                                            </ion-icon>
+                                          
+                                        </ng-container>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div> 
+                        
+                    </div>
+                </div>
+
+                
+                </ng-container>
+                                                               
+            </div>
+        </div>
+	</div>
+</div>
+</div>
+</div>
+</div>
+</ion-col>
+</ion-row>
+</ion-grid>
+</ion-content>

@@ -1,0 +1,7 @@
+{
+  "name": "yiiu-customer",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}

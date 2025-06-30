@@ -1,0 +1,42 @@
+<ion-header no-border>
+    <ion-toolbar color="primary">
+        <ion-buttons slot="start">
+            <ion-menu-button></ion-menu-button>
+        </ion-buttons>
+        <ion-title>Transaction History</ion-title>
+    </ion-toolbar>
+</ion-header>
+<ion-content fullscreen="true" slot="fixed">
+    <ion-grid>
+        <ion-row>
+            <ion-col>
+                <div class="card-body">
+                    <div class="loginPg">
+                        <div class="loginBx">
+                            <h1>Your <span class="instk">Trasaction Details</span></h1>
+                            
+                            <ng-container *ngIf="transactionHistory">
+                              <div *ngFor="let req of transactionHistory; let i = index">
+                                  <ion-card>
+                                      
+                                    
+                                    <ion-card-content>
+                                      
+                                      <p><b>TXN # : </b>{{req.payment_details}}</p>
+                                      <p><b>TXN Date : </b>{{req.cpay_date}}</p>
+                                      <p><b>Amount : </b>{{req.camount}}</p>
+                                      <p><b>Status : </b>SUCCESS</p>
+                                      
+                                    </ion-card-content>
+                                  </ion-card>
+                                </div>
+                        </ng-container>
+                          <ng-container *ngIf="transactionHistory.length <= 0">No Transaction Found.</ng-container>
+      
+                        </div>
+                    </div>
+                </div>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+</ion-content>

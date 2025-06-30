@@ -1,0 +1,190 @@
+ion-content {
+    --background: url('/assets/images/bg-webc112.png') no-repeat center left/contain fixed, #fff;
+    position: relative;
+    height: 100%;
+    width: 100%;
+}
+
+.bgpro {
+    background-image: url('/assets/images/bgpro.jpg');
+    height: auto;
+    background-size: cover;
+    filter: blur(0px);
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+.card {
+    margin: 0 auto;
+
+    .header {
+        height: 140px;
+
+        .avatar {
+            width: 160px;
+            height: 100px;
+            position: relative;
+            margin: 0 auto;
+
+            img {
+                display: block;
+                border-radius: 50%;
+                position: absolute;
+                bottom: calc(-1*(80px + 4px));
+                border: 8px solid #9Dc912;
+                background-color: #fff;
+            }
+        }
+    }
+}
+
+.card-body {
+    padding: 30px;
+    height: calc(100vh - (200px + 56px));
+    overflow: hidden;
+
+    .user-meta {
+        padding-top: 40px;
+
+        .playername {
+            font-size: 24px;
+            font-weight: 600;
+            color: #303940;
+        }
+
+        .country {
+            font-size: 90%;
+            color: #949ea6;
+            text-transform: uppercase;
+            margin: 0 auto;
+        }
+    }
+}
+
+.loginBx {
+    margin: auto;
+    max-width: 374px;
+    padding: 25px;
+    background: rgba(252, 250, 250, 0.5);
+    border-radius: 10px;
+    text-align: center;
+}
+
+.loginBx .logologin {
+    max-width: 150px;
+    margin: auto;
+}
+
+.loginBx>h1 {
+    margin: 20px 0 40px;
+    font-size: 1.3rem;
+}
+
+.loginBx form {
+    text-align: left;
+}
+
+form label {
+    font-weight: 700;
+    font-size: .9rem;
+}
+
+.loginBx form input {
+    border-radius: 5px;
+    font-size: 1em;
+    padding: 8px 15px;
+    font-weight: 700;
+    width: 100%;
+    margin-bottom: 15px;
+    background: #fff0;
+    color: #52525294;
+    border: 1px solid rgba(0, 0, 0, .35);
+}
+
+.loginBx form textarea {
+    border-radius: 5px;
+    font-size: 1em;
+    padding: 8px 15px;
+    font-weight: 700;
+    width: 100%;
+    margin-bottom: 15px;
+    background: #fff0;
+    color: #52525294;
+    border: 1px solid rgba(0, 0, 0, .35);
+}
+
+.loginBx form ion-select {
+    border-radius: 5px;
+    font-size: 1em;
+    padding: 8px 15px;
+    font-weight: 700;
+    width: 100%;
+    margin-bottom: 15px;
+    background: #fff0;
+    border: 1px solid rgba(0, 0, 0, .35);
+}
+
+.secondary-link {
+    font-weight: 700;
+    color: #000;
+    opacity: .4;
+    display: inline-block;
+    margin-top: 13px;
+    font-size: .9em;
+}
+
+.secondary-link:hover {
+    color: #000;
+    opacity: 1;
+}
+
+.loginBtn {
+    padding: 8px 20px;
+    width: 100%;
+    text-align: center;
+    border-radius: 30px;
+    font-size: 18px;
+    color: #fff;
+    background-color: #5E8F0F;
+}
+
+.loginBx form input {
+    height: 45px;
+    border-radius: 50px;
+    border: none;
+    background: #fff;
+    box-shadow: 0 0px 10px 0 rgb(0 0 0 / 16%), 0 0px 10px 0 rgb(0 0 0 / 16%);
+    font-size: 14px;
+    padding: 5px 20px;
+}
+
+.loginBx form textarea {
+    height: 45px;
+    border-radius: 50px;
+    border: none;
+    background: #fff;
+    box-shadow: 0 0px 10px 0 rgb(0 0 0 / 16%), 0 0px 10px 0 rgb(0 0 0 / 16%);
+    font-size: 14px;
+    padding: 5px 20px;
+}
+
+.loginBx form ion-select {
+    height: 45px;
+    border-radius: 50px;
+    border: none;
+    background: #fff;
+    box-shadow: 0 0px 10px 0 rgb(0 0 0 / 16%), 0 0px 10px 0 rgb(0 0 0 / 16%);
+    font-size: 14px;
+    padding: 5px 20px;
+}
+
+.log_in_btn {
+    width: 100%;
+    margin: 0;
+    background: #126666;
+    border-radius: 50px;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 600;
+    padding: 10px;
+}

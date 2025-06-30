@@ -1,0 +1,70 @@
+<ion-header no-border>
+  <ion-toolbar color="primary">
+      <ion-buttons slot="start">
+          <ion-menu-button></ion-menu-button>
+      </ion-buttons>
+      <ion-title>Reports</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content fullscreen="true" slot="fixed">
+<ion-grid>
+  <ion-row>
+      <ion-col>
+          <div >
+              <div class="loginPg">
+                  <div class="loginBx">
+                      <h1><span class="instk">Reports</span></h1>
+                      <div class="form-group">
+                        <ion-select placeholder="Select a District" (ionChange)="triggerEvent($event)">
+                            <ion-select-option value="">--Select District--</ion-select-option>
+                            <ion-select-option value="ALIPURDUAR">ALIPURDUAR</ion-select-option>
+                            <ion-select-option value="BANKURA">BANKURA</ion-select-option>
+                            <ion-select-option value="BIRBHUM">BIRBHUM</ion-select-option>
+                            <ion-select-option value="COOCHBEHAR">COOCHBEHAR</ion-select-option>
+                            <ion-select-option value="DAKSHIN DINAJPUR">DAKSHIN DINAJPUR</ion-select-option>
+                            <ion-select-option value="DARJEELING">DARJEELING</ion-select-option>
+                            <ion-select-option value="HOOGHLY">HOOGHLY</ion-select-option>
+                            <ion-select-option value="HOWRAH">HOWRAH</ion-select-option>
+                            <ion-select-option value="JALPAIGURI">JALPAIGURI</ion-select-option>
+                            <ion-select-option value="JHARGRAM">JHARGRAM</ion-select-option>
+                            <ion-select-option value="KALIMPONG">KALIMPONG</ion-select-option>
+                            <ion-select-option value="MALDA">MALDA</ion-select-option>
+                            <ion-select-option value="MURSHIDABAD">MURSHIDABAD</ion-select-option>
+                            <ion-select-option value="NADIA">NADIA</ion-select-option>
+                            <ion-select-option value="NORTH 24 PARGANAS">NORTH 24 PARGANAS</ion-select-option>
+                            <ion-select-option value="PASCHIM BARDHAMAN">PASCHIM BARDHAMAN</ion-select-option>
+                            <ion-select-option value="PASCHIM MEDINIPUR">PASCHIM MEDINIPUR</ion-select-option>
+                            <ion-select-option value="PURBA BARDHAMAN">PURBA BARDHAMAN</ion-select-option>
+                            <ion-select-option value="PURBA MEDINIPUR">PURBA MEDINIPUR</ion-select-option>
+                            <ion-select-option value="PURULIA">PURULIA</ion-select-option>
+                            <ion-select-option value="SOUTH 24 PARGANAS">SOUTH 24 PARGANAS</ion-select-option>
+                            <ion-select-option value="UTTAR DINAJPUR">UTTAR DINAJPUR</ion-select-option>
+                        </ion-select>
+                         </div>
+                    
+                      <ng-container *ngIf="celebRequests">
+                        <div *ngFor="let req of celebRequests; let i = index">
+                            <ion-card>
+                                
+                              
+                              <ion-card-content>
+                                
+                                <p><b>Registration No : </b>{{req.vehicle_no}}</p>
+                                <p><b>Reg Date : </b>{{req.reg_date}}</p>
+                                <p><b>District : </b>{{req.district}}</p>
+                                <p><b>Owner : </b>{{req.owner}}</p>
+                                
+                              </ion-card-content>
+                            </ion-card>
+                          </div>
+                  </ng-container>
+                    <ng-container *ngIf="celebRequests.length <= 0">No Vehicle Found.</ng-container>
+
+                      
+                  </div>
+              </div>
+          </div>
+      </ion-col>
+  </ion-row>
+</ion-grid>
+</ion-content>

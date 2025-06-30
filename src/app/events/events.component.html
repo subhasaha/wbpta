@@ -1,0 +1,42 @@
+<ion-header no-border>
+  <ion-toolbar color="primary">
+      <ion-buttons slot="start">
+          <ion-menu-button></ion-menu-button>
+      </ion-buttons>
+      <ion-title>Payments</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content fullscreen="true" slot="fixed">
+  <ion-grid>
+      <ion-row>
+          <ion-col>
+              <div class="card-body">
+                  <div class="loginPg">
+                      <div class="loginBx">
+                        <h1>Other Yearly <span class="instk">Payments</span></h1>
+                          <form [formGroup]="paymentFrm" (ngSubmit)="submit()">
+                            <div class="form-group">
+                                <ion-select  formControlName="eventName" placeholder="Select any event" (ionChange)="triggerEvent($event)">
+                                  <ion-select-option value="" >Select any event</ion-select-option>
+                                    <ion-select-option value="{{res.title}}#{{res.price}}" *ngFor="let res of celebEvents; let i = index">{{res.title}}</ion-select-option>
+                                    
+                                </ion-select>
+                              <div class="error" *ngIf="paymentFrm.controls['eventName'].errors?.required &&
+                              paymentFrm.controls['eventName'].touched">Select Any Payment type</div>
+                          </div>
+                            <div class="form-group">
+                                <input type="text" class="form-control" formControlName="amount" placeholder="Amount" disabled>
+                               
+                          </div>
+                          
+                              <div class="text-center">
+                                  <ion-button [disabled]="!paymentFrm.valid" type="submit" color="primary" shape="round" expand="block">PAY NOW</ion-button>
+                              </div>
+                          </form>
+                      </div>
+                  </div>
+              </div>
+          </ion-col>
+      </ion-row>
+  </ion-grid>
+</ion-content>

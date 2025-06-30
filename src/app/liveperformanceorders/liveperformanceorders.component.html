@@ -1,0 +1,56 @@
+<ion-header no-border>
+  <ion-toolbar color="primary">
+      <ion-buttons slot="start">
+          <ion-menu-button></ion-menu-button>
+      </ion-buttons>
+      <ion-title>Live Performance Orders</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content fullscreen="true" slot="fixed">
+<ion-grid>
+  <ion-row>
+      <ion-col>
+          <div >
+              <div class="loginPg">
+                  <div class="loginBx">
+                      <h1>Live Performance <span class="instk">Orders</span></h1>
+
+                      <ng-container *ngIf="celebRequests">
+                        <div *ngFor="let req of celebRequests; let i = index">
+                          <ion-card *ngIf="req.expertise_id == 4">
+                              
+                            
+                            <ion-card-content>
+                              
+                              <p><b>Occation Type : </b>{{req.oc_name}}</p>
+                              <p><b>{{req.oc_name}} Date : </b>{{req.occ_date}}</p>
+                              <p><b>Amount : </b>${{req.reqAmount}}</p>
+                              <p><b>Expertise Area Requested : </b>{{req.expertise_area_requested}}</p>
+                              <p><b>Purpose : </b>{{req.purpose}}</p>
+                              <p><b>Celebrity : </b>{{req.celeb_nm}}</p>
+                              <ion-card style="margin: 0px;margin-top: 15px;" *ngIf="req.cvideos">
+                                <video controls preload="auto" style="width: 100%" src="https://yiiu.vip/{{req.cvideos}}"></video>
+                              </ion-card>
+                              <br style="clear: both;"/>
+                              <div *ngIf="req.oc_status == 0" style=" background: red; padding: 5px; color: #fff; font-weight: bold; width: 80%;margin: 0 auto; " >Waiting for confirmation</div>
+                              <div *ngIf="req.oc_status == 1" style=" background: green; padding: 5px; color: #fff; font-weight: bold; width: 80%;margin: 0 auto;" >Completed</div>
+                              <br style="clear: both;"/>
+                              <div *ngIf="req.cvideos"  style=" background: green; padding: 5px; color: #fff; font-weight: bold; width: 80%;margin: 0 auto; border-radius: 10px; cursor: pointer;" (click)="downloadFile('https://yiiu.vip/'+req.cvideos)" >Download</div>
+                              <br *ngIf="req.cvideos" style="clear: both;"/>
+                            
+                            </ion-card-content>
+                          </ion-card>
+                        </div>
+                          
+                    </ng-container>
+
+                    <ng-container *ngIf="!celebRequests">No Orders Found.</ng-container>
+
+                      
+                  </div>
+              </div>
+          </div>
+      </ion-col>
+  </ion-row>
+</ion-grid>
+</ion-content>

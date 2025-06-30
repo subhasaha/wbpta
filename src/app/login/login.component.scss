@@ -1,0 +1,129 @@
+.bg{
+    background-image: url('/assets/images/bg.jpg');
+    height: auto;
+    background-size: cover;
+    filter: blur(0px);
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+ion-content{
+    --background: url('/assets/images/bg-webc112.png') no-repeat center left/contain fixed, #fff;
+   
+}
+.loginBx{
+    margin: auto;
+    max-width: 374px;
+    padding: 25px;
+    background:rgba(252, 250, 250, 0.5);
+    border-radius: 10px;
+    text-align: center;
+    color: #000 !important;
+}
+.loginBx .logologin{
+    max-width: 150px;
+    margin: auto;
+}
+.loginBx > h1{
+    margin:20px 0 40px;
+    font-size: 1.3rem;
+}
+
+.loginBx form{
+    text-align: left;
+}
+form label{
+    font-weight: 700;
+    font-size:.9rem;
+}
+.loginBx form input{
+    border-radius: 5px;
+    font-size: 1em;
+    padding: 8px 15px;
+    font-weight: 700;
+    width: 100%;
+    margin-bottom: 15px;
+    background: #fff0;
+    border: 1px solid rgba(0,0,0,.35);
+    color: #000 !important;
+}
+.secondary-link{
+    font-weight: 700;
+    color: #000;
+    opacity: .4;
+    display: inline-block;
+    margin-top:13px;
+    font-size:.9em;
+}
+.secondary-link:hover{
+    color: #000;
+    opacity:1;
+}
+.loginBtn {
+    padding: 8px 20px;
+    width: 100%;
+    text-align: center;
+    border-radius: 30px;
+    font-size: 18px;
+    color: #fff;
+    background-color:#5E8F0F;
+}
+.frmaxon {margin-top: 20px; overflow: hidden; clear:both;}
+.frmaxon1 {margin-top: 20px; overflow: hidden; clear:both;}
+.frmaxon1 .col {
+    display: inline-flex;
+}
+
+.frmaxon1 ion-button {
+    border:none;
+}
+
+.loginBx form input{
+    height: 45px;
+    border-radius: 50px;
+    border: none;
+    background: #fff;
+    box-shadow: 0 0px 10px 0 rgb(0 0 0 / 16%), 0 0px 10px 0 rgb(0 0 0 / 16%);
+    font-size: 14px;
+    padding: 5px 20px;
+  }
+  .loginBx form .passeye{
+    position: absolute;
+    right: 12px;
+    top: 12px;
+  }
+
+  .log_in_btn{
+    width: 100%;
+    margin: 0;
+    background: #126666;
+    border-radius: 50px;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 600;
+    padding: 10px;
+  }
+  .password_reste a{
+    font-size: 14px;
+    font-weight: 500;
+    color: #126666;
+  }
+  .face_btn{
+    background: #4267b2;
+    color: #fff;
+    font-size: 12px;
+    font-weight: 500;
+    border-radius: 50px;
+    display: block;
+    width: 140px;
+    text-align: center;
+    margin:0 5px;
+  }
+  .g_btn{
+    background: #db4437;
+    color: #fff;
+    font-size: 12px;
+    font-weight: 500;
+    border-radius: 50px;
+    display: block;
+    text-align: center;
+  }

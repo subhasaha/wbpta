@@ -1,0 +1,44 @@
+ion-content {
+	--background: url('/assets/images/bg-webc112.png') no-repeat center left/contain fixed, #fff;
+	position: relative;
+	height: 100%;
+	width: 100%;
+}
+a {
+    text-decoration: none;
+}
+.dashboard_item {
+    box-shadow: 0 2px 5px 0 rgb(0 0 0 / 7%), 0 2px 10px 0 rgb(0 0 0 / 4%);
+    text-align: center;
+    padding: 30px 10px;
+    margin-bottom: 20px;
+    min-height: 180px;
+    transition: .5s;
+    border-radius:30px;
+    background: linear-gradient(359deg,#0e136F,#90d5ffab);
+}
+.dashboard_item:hover {
+    box-shadow: 0 2px 5px 0 rgb(0 0 0 / 28%), 0 2px 10px 0 rgb(0 0 0 / 18%);
+}
+
+.dshborad_item_icon img {
+    width: 60px;
+}
+.dashboard_item_name {
+    margin-top: 10px;
+}
+.dashboard_item_name h1 {
+    font-size: 15px;
+    margin: 0;
+    font-weight: 600;
+    line-height: 15px;
+    color: #fff;
+    margin-bottom: 5px;
+}
+.dashboard_item_name p {
+    font-size: 12px !important;
+    color: #a0a0a0 !important;
+    margin: 0 !important;
+    line-height: 15px;
+    margin-top: 5px !important;
+}

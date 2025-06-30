@@ -1,0 +1,90 @@
+<ion-header no-border>
+  <ion-toolbar color="primary">
+      <ion-buttons slot="start">
+          <ion-menu-button></ion-menu-button>
+      </ion-buttons>
+      <ion-title>Celebrity Form</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content fullscreen="true" slot="fixed">
+  <ion-grid>
+      <ion-row>
+          <ion-col>
+              <div class="card-body">
+                  <div class="loginPg">
+                      <div class="loginBx">
+                          <form>
+                              <div class="form-group">
+                                  <ion-select class="selector" name="industry" placeholder="Select your industry" required>
+                                      <ion-select-option value="">Select your industry</ion-select-option>
+                                      <ion-select-option value="1">Singer</ion-select-option>
+                                      <ion-select-option value="2">Athlete</ion-select-option>
+                                      <ion-select-option value="3">Entertainer</ion-select-option>
+                                  </ion-select>
+                              </div>
+                              <div class="form-group">
+                                  <ion-select class="selector" name="language" placeholder="Select your language" required>
+                                      <ion-select-option value="">Select your language</ion-select-option>
+                                      <ion-select-option value="1">English</ion-select-option>
+                                      <ion-select-option value="2">French</ion-select-option>
+                                      <ion-select-option value="3">Spanish</ion-select-option>
+                                  </ion-select>
+                              </div>
+                              <div class="exp-area">
+                                  <ion-title size="small" color="primary">Select Your Expertise:</ion-title>
+                                  <div class="form-group">
+                                      <p>Sing A Custom Song For Birthday, Anniversary, Or Any Occasion By User's Choice.</p>
+                                      <p>
+                                          <ion-checkbox color="primary"></ion-checkbox>
+                                          <input type="text" class="form-smlinput" value="" placeholder="Enter Your Price" required>
+                                      </p>
+                                  </div>
+                                  <div class="form-group">
+                                      <p>Sing A Song For Birthday, Anniversary, Or Any Occasion By Celebrity Choice.</p>
+                                      <p>
+                                          <ion-checkbox color="primary"></ion-checkbox>
+                                          <input type="text" class="form-smlinput" value="" placeholder="Enter Your Price" required>
+                                      </p>
+                                  </div>
+                                  <div class="form-group">
+                                      <p>Shoot A Custom Video Wish Message For Birthday, Anniversary, Or Any Occasion By User's Choice.</p>
+                                      <p>
+                                          <ion-checkbox color="primary"></ion-checkbox>
+                                          <input type="text" class="form-smlinput" value="" placeholder="Enter Your Price" required>
+                                      </p>
+                                  </div>
+                                  <div class="form-group">
+                                      <p>Shoot A Video Wish Message For Birthday, Anniversary, Or Any Occasion By Celebrity Choice.</p>
+                                      <p>
+                                          <ion-checkbox color="primary"></ion-checkbox>
+                                          <input type="text" class="form-smlinput" value="" placeholder="Enter Your Price" required>
+                                      </p>
+                                  </div>
+                                  <div class="form-group">
+                                      <p>Pay For Live Performance.</p>
+                                      <p>
+                                          <ion-checkbox color="primary"></ion-checkbox>
+                                          <input type="text" class="form-smlinput" value="" placeholder="Enter Your Price" required>
+                                      </p>
+                                  </div>
+                                  <div class="form-group">
+                                    <p><input type="text" class="form-smlinput" value="" placeholder="Custom Expertise Area" required></p>
+                                    <p>
+                                        <ion-checkbox color="primary"></ion-checkbox>
+                                        <input type="text" class="form-smlinput" value="" placeholder="Enter Your Price" required>
+                                    </p>
+                                </div>
+                                </div>
+                                <div class="frmaxon">
+                                  <div class="col text-right">
+                                   <ion-button routerLink="/dashboard" routerDirection="forward" color="primary" shape="round" expand="block">SAVE</ion-button>
+                                  </div>
+                                </div>
+                          </form>
+                      </div>
+                  </div>
+              </div>
+          </ion-col>
+      </ion-row>
+  </ion-grid>
+</ion-content>

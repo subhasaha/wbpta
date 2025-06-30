@@ -1,0 +1,36 @@
+<ion-header no-border>
+  <ion-toolbar color="primary">
+      <ion-buttons slot="start">
+          <ion-menu-button></ion-menu-button>
+      </ion-buttons>
+      <ion-title>Enter OTP</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content fullscreen="true" slot="fixed">
+  <ion-grid>
+      <ion-row>
+          <ion-col>
+              <div class="card-body">
+                  <div class="loginPg">
+                      <div class="loginBx">
+                          <form [formGroup]="forgetotpForm" (ngSubmit)="submit()">
+
+                            <p>Please enter the OTP sent to your Email ID</p>
+
+                            <div class="form-group">
+                              <input type="text" class="form-control" formControlName="forgetotp" placeholder="OTP">
+                              <div class="error" *ngIf="forgetotpForm.controls['forgetotp'].errors?.required &&
+                              forgetotpForm.controls['forgetotp'].touched">OTP is required</div>
+                            </div>
+
+                              <div class="text-center">
+                                  <ion-button [disabled]="!forgetotpForm.valid" type="submit" color="primary" shape="round" expand="block">NEXT</ion-button>
+                              </div>
+                          </form>
+                      </div>
+                  </div>
+              </div>
+          </ion-col>
+      </ion-row>
+  </ion-grid>
+</ion-content>

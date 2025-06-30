@@ -1,0 +1,95 @@
+<ion-header no-border>
+    <ion-toolbar color="primary">
+        <ion-buttons slot="start">
+            <ion-menu-button></ion-menu-button>
+        </ion-buttons>
+        <ion-title>Profile</ion-title>
+    </ion-toolbar>
+</ion-header>
+<ion-content fullscreen="true" slot="fixed">
+    <ion-grid>
+        <ion-row>
+            <ion-col>
+                <div class="card" style="display: none;">
+                    <div class="header proimg" >
+                        <div class="avatar"> <img [src]="profilePic" alt=""> </div>
+                        <ion-fab *ngIf="editing" (click)="selectImage()" slot="fixed">
+                            <ion-fab-button>
+                                <ion-icon name="camera"></ion-icon>
+                            </ion-fab-button>
+                        </ion-fab>
+                    </div>
+
+                </div>
+                <div class="card-body">
+                    <div *ngIf="!editing">
+                        <ng-container *ngIf="profileToShow">
+                            <div class="loginPg">
+                                <div class="loginBx">
+                                    <form>
+                                        <div class="form-group">
+                                            <label>Name</label>
+                                            <input type="text" class="form-control" value="{{profileToShow.fullname}}" disabled>
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Email</label>
+                                            <input type="text" class="form-control" value="{{profileToShow.email}}" disabled>
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Phone</label>
+                                            <input type="text" class="form-control" value="{{profileToShow.mobilenumber}}" disabled>
+                                        </div>
+                                        
+                                    </form>
+                                </div>
+                            </div>
+                        </ng-container>
+                        <!-- fab placed to the top end -->
+                        <ion-fab (click)="toogleEditing(true)" vertical="top" horizontal="end" slot="fixed">
+                            <ion-fab-button>
+                                <ion-icon name="create"></ion-icon>
+                            </ion-fab-button>
+                        </ion-fab>
+                    </div>
+                    <div *ngIf="editing" class="loginPg">
+                        <div class="loginBx">
+                            <form name="form" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm">
+                                <div class="form-group">
+                                    <label>Name</label>
+                                    <input type="text" name="fullname" class="form-control" [(ngModel)]="profileObjToUpdate.fullname" #fullname="ngModel" [ngClass]="{ 'is-invalid': f.submitted && fullname.invalid }" required>
+                                    <div *ngIf="f.submitted && fullname.invalid" class="invalid-feedback">
+                                        <div *ngIf="fullname.errors.required">Name is required</div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label>Email</label>
+                                    <input type="text" name="email" class="form-control" [(ngModel)]="profileObjToUpdate.email" #email="ngModel" [ngClass]="{ 'is-invalid': f.submitted && email.invalid }" required>
+                                    <div *ngIf="f.submitted && email.invalid" class="invalid-feedback">
+                                        <div *ngIf="email.errors.required">Email is required</div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label>Phone</label>
+                                    <input type="text" name="phone" class="form-control" [(ngModel)]="profileObjToUpdate.phone" #phone="ngModel" [ngClass]="{ 'is-invalid': f.submitted && phone.invalid }" required>
+                                    <div *ngIf="f.submitted && phone.invalid" class="invalid-feedback">
+                                        <div *ngIf="phone.errors.required">Phone no is required</div>
+                                    </div>
+                                </div>
+                               <br/><br/>
+                                <div class="text-center">
+                                    <button class="btn btn-primary loginBtn">UPDATE</button>
+                                </div>
+                            </form>
+                            
+                        </div>
+                        <ion-fab (click)="toogleEditing(false)" vertical="top" horizontal="end" slot="fixed">
+                            <ion-fab-button>
+                                <ion-icon name="close"></ion-icon>
+                            </ion-fab-button>
+                        </ion-fab>
+                    </div>
+                </div>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+</ion-content>

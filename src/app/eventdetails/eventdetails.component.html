@@ -1,0 +1,175 @@
+<ion-header no-border>
+  <ion-toolbar color="primary">
+      <ion-buttons slot="start">
+          <ion-menu-button></ion-menu-button>
+      </ion-buttons>
+      <ion-title>{{event.title}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content fullscreen="true" slot="fixed" >
+<ion-grid>
+  <ion-row>
+    <ion-col>
+      <div >
+        <div class="loginPg">
+            <div class="loginBx">
+<div class="events-area-details">
+	<div class="container-fluid">
+		<div class="enent-details-inner">
+            <div class="row">
+                <div class="col-12">
+                    <div class="left-event-section">
+                        <div class="image-left-enent">
+                            <img src="https://www.yiiu.vip/{{event.event_pic}}" class="img-fluid w-100" alt=""> 
+                        </div>
+                        <div class="item-details">
+                            <h3>{{event.title}}</h3>
+                            <p>{{event.event_time | date: 'EEEE, MMMM d, YYYY'}} | {{event.event_time | date:'h:mm a'}}<br>
+                              {{event.location}} - {{event.city}}</p>
+                        </div>
+                        <div class="share-item">
+                            <p>Share</p>
+                            <a href="#!"><i class="fab fa-facebook-f"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12">
+                    <div class="ticket-details">
+                    	<form class="form-validate frm-occation" method="post" action="">
+	                        <div class="note-section">
+	                            <p><i class="fas fa-exclamation-circle"></i> There is a limit of 10 tickets per customer. Service charges are non-refundable. All sales are final.</p>
+	                        </div>
+	                        <div class="ticket-type">
+	                            <div class="row m-0">
+	                                <div class="col-sm-6 col-3 p-0">
+	                                    <div class="ticket-heading">
+	                                        <p>TICKET TYPE</p>
+	                                    </div>
+	                                </div>
+	                                <div class="col-sm-2 col-3 p-0">
+	                                    <div class="ticket-heading">
+	                                        <p>PRICE</p>
+	                                    </div>
+	                                </div>
+	                                <div class="col-sm-2 col-3 p-0">
+	                                    <div class="ticket-heading">
+	                                        <p>CHARGES</p>
+	                                    </div>
+	                                </div>
+	                                <div class="col-sm-2 col-3 p-0">
+	                                    <div class="ticket-heading">
+	                                        <p>AMOUNT</p>
+	                                    </div>
+	                                </div>
+	                            </div>
+	                            <div class="row m-0">
+	                                <div class="col-sm-6 col-3 p-0">
+	                                    <div class="ticket-data-type">
+	                                        <p>General</p>
+	                                    </div>
+	                                </div>
+	                                <div class="col-sm-2 col-3 p-0">
+	                                    <div class="ticket-data-type">
+	                                        <p><span>${{event.price}}</span></p>
+	                                    </div>
+	                                </div>
+	                                <div class="col-sm-2 col-3 p-0">
+	                                    <div class="ticket-data-type">
+	                                        <p><span>${{event.commission}}</span></p>
+	                                    </div>
+	                                </div>
+	                                <div class="col-sm-2 col-3 p-0">
+	                                    <div class="ticket-data-type">
+	                                        <select name="amount" class="browser-default custom-select">
+	                                            <option value="1" selected="">1</option>
+	                                            <option value="2">2</option>
+	                                            <option value="3">3</option>
+	                                            <option value="4">4</option>
+	                                            <option value="5">5</option>
+	                                            <option value="6">6</option>
+	                                            <option value="7">7</option>
+	                                            <option value="8">8</option>
+	                                            <option value="9">9</option>
+	                                            <option value="10">10</option>
+	                                        </select>
+	                                    </div>
+	                                    
+	                                </div>
+	                            </div>
+	                        </div>
+	                        <div class="event-details">
+	                            <h3 style="text-transform: capitalize">{{event.title}}</h3>
+	                            <ul> 
+	                            	<li>Event Date:  <span>{{event.event_time | date: 'EEEE, MMMM d, YYYY'}} | {{event.event_time | date:'h:mm a'}}</span></li>
+	                                <li>Venue Name:  <span>{{event.location}}</span></li>
+	                                <li>Venue Address:  <span>{{event.city}}</span></li>
+	                                
+	                                <li>Celebrity Performing: <span>{{event.celebrity}}</span></li>
+	                            </ul>
+
+	                            <!-- Book Table-->
+	                            <div class="book-yur-tbl">
+                                    <div class="home-event-heading">
+                                        <h1>Choose Your Table</h1>
+                                    </div>
+                                    <div class="select-table-area">
+                                        <ul>
+
+                                            <li *ngFor="let table of event_tables; let i = index">
+                                                <div class="table-type-area">
+                                                    <div class="view-tble-name">
+                                                        <h4>{{table.table_id}}</h4>  
+                                                    </div>
+                                                    <div class="view-table-others-details">
+                                                        <p>Table Price: ${{table.table_price}}</p>
+                                                        <select class="browser-default custom-select" name="table_qty[]">
+                                                            <option value="" selected="">Select Number of Table </option>
+                                                            <option value="1">1</option>
+                                                            <option value="2">2</option>
+                                                            <option value="3">3</option>
+                                                            <option value="4">4</option>
+                                                            <option value="5">5</option>
+                                                            <option value="6">6</option>
+                                                        </select>
+                                                        <p class="ticket-indi">Available Ticket: {{table.table_qty}}</p>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            
+                                        </ul>
+                                    </div>
+                                </div>
+	                            <button class="buy-ticket-btn ml-auto" type="">Buy Ticket</button>
+	                        </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="col-12">
+                    <div class="details-event-area">
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="details-event-area-left">
+                                    <h3>DESCRIPTION</h3>
+                                    <p>{{event.description}}</p>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="location-right">
+                                 
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <br/><br/>
+            </div>
+        </div>
+	</div>
+</div>
+</div>
+</div>
+</div>
+</ion-col>
+</ion-row>
+</ion-grid>
+</ion-content>

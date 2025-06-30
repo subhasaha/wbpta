@@ -1,0 +1,35 @@
+<ion-header no-border>
+    <ion-toolbar color="primary">
+        <ion-buttons slot="start">
+            <ion-menu-button></ion-menu-button>
+        </ion-buttons>
+        <ion-title>Bank Details</ion-title>
+    </ion-toolbar>
+</ion-header>
+<ion-content fullscreen="true" slot="fixed" >
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        
+        <div class="card-body">
+          <div class="loginPg">
+          <div class="loginBx">
+            <form>
+              <div class="form-group">
+                <ion-lebel>PayPal Merchant ID</ion-lebel>
+                <input type="text" class="form-control" id="Merchant_ID" placeholder="Enter PayPal Merchant ID*" required>
+                <p>How do I find my Secure Merchant ID on my PayPal account?</p>
+              </div>
+              <div class="frmaxon">
+                <div class="col text-right">
+                  <ion-button routerLink="/home" routerDirection="forward" color="primary" shape="round" expand="block">SAVE OR UPDATE</ion-button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

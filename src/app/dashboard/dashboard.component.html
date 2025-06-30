@@ -1,0 +1,108 @@
+<ion-header no-border>
+    <ion-toolbar color="primary">
+        <ion-buttons slot="start">
+            <ion-menu-button></ion-menu-button>
+        </ion-buttons>
+        <ion-title>Dashboard</ion-title>
+    </ion-toolbar>
+</ion-header>
+<ion-content fullscreen="true" slot="fixed">
+    <ion-grid>
+        <ion-row>
+            <ion-col size="6">
+                <a (click)="redirectTo('request-view')">
+                    <div class="dashboard_item">
+						<div class="dshborad_item_icon">
+							<img src="assets/icon/fame.png" alt="">
+						</div>
+						<div class="dashboard_item_name">
+							<h1>My Vehicles</h1>
+							<p>List my vehicles!</p>
+						</div>
+					</div>
+                </a>
+            </ion-col>
+            <ion-col size="6">
+                <a (click)="redirectTo('invitefriends')">
+                    <div class="dashboard_item">
+						<div class="dshborad_item_icon">
+							<img src="assets/icon/my_request.png" alt="">
+						</div>
+						<div class="dashboard_item_name">
+							<h1>Add New Vehicle</h1>
+							<p>Add more vehicles (if you have)</p>
+						</div>
+					</div>
+                </a>
+            </ion-col>
+
+            <ion-col size="6">
+                <a data-toggle="tab">
+                    <div class="dashboard_item">
+						<div class="dshborad_item_icon">
+							<img src="assets/icon/report.png" alt="">
+						</div>
+						<div class="dashboard_item_name">
+							<h1>Reports</h1>
+							<p>Search vehicle District Wise</p>
+						</div>
+					</div>
+                </a>
+            </ion-col>
+            
+            <ion-col size="6">
+                <a (click)="redirectTo('change-password')" data-toggle="tab">
+                    <div class="dashboard_item">
+                        <div class="dshborad_item_icon">
+                            <img src="assets/images/password_change.png" alt="" data-no-retina="">
+                        </div>
+                        <div class="dashboard_item_name">
+                            <h1>Change Password</h1>
+                            <p>Change your password regularly</p>
+                        </div>
+                    </div>
+                </a>
+            </ion-col>
+            <ion-col size="6">
+                <a (click)="redirectTo('transaction-history')" data-toggle="tab">
+                    <div class="dashboard_item">
+						<div class="dshborad_item_icon">
+							<img src="assets/icon/transaction_history.png" alt="">
+						</div>
+						<div class="dashboard_item_name">
+							<h1>Transaction History</h1>
+							<p>See all transaction history</p>
+						</div>
+					</div>
+                </a>
+            </ion-col>
+            <ion-col size="6">
+                <a (click)="redirectTo('events')" data-toggle="tab">
+                    <div class="dashboard_item">
+						<div class="dshborad_item_icon">
+							<img src="assets/icon/wallet_icon.png" alt="">
+						</div>
+						<div class="dashboard_item_name">
+							<h1>Payments</h1>
+							<p>Make payments for multiple events.</p>
+						</div>
+					</div>
+                </a>
+            </ion-col>
+            <ion-col size="6">
+                <a (click)="redirectTo('my-profile')" data-toggle="tab">
+                    <div class="dashboard_item">
+						<div class="dshborad_item_icon">
+							<img src="assets/icon/my-profile.png" alt="" data-no-retina="">
+						</div>
+						<div class="dashboard_item_name">
+							<h1>Profile Details</h1>
+							<p>Change your profile details and password</p>
+						</div>
+					</div>
+                </a>
+            </ion-col>
+            
+        </ion-row>
+    </ion-grid>
+</ion-content>
