@@ -7,7 +7,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
 import { Crop } from '@ionic-native/crop/ngx';
 import { File } from '@ionic-native/file/ngx';
-import { Camera } from '@ionic-native/Camera/ngx';
+
 import { Downloader } from '@ionic-native/downloader/ngx';
 
 import { HTTP } from '@ionic-native/http/ngx';
@@ -84,7 +84,7 @@ import { NgxQRCodeModule } from '@techiediaries/ngx-qrcode';
     File,
     HTTP,
     Crop,
-    Camera,
+    
     Downloader
   ],
   bootstrap: [AppComponent],

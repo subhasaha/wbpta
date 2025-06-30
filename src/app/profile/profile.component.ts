@@ -8,7 +8,6 @@ import { MessageService } from '../services/message/message.service';
 
 import { Crop } from '@ionic-native/crop/ngx';
 import { File } from '@ionic-native/file/ngx';
-import { Camera, CameraOptions } from '@ionic-native/Camera/ngx';
 
 @Component({
   selector: 'app-profile',
@@ -33,7 +32,6 @@ export class ProfileComponent implements OnInit {
   constructor(
     private messageService: MessageService,
     private apiService: ApiService,
-    private camera: Camera,
     private crop: Crop,
     private file: File,
     public actionSheetController: ActionSheetController,
@@ -99,80 +97,7 @@ export class ProfileComponent implements OnInit {
   //   }, (err) => { console.log(err); });
   // }
 
-  pickImage(sourceType) {
-    const options: CameraOptions = {
-      quality: 30,
-      sourceType: sourceType,
-      destinationType: this.camera.DestinationType.FILE_URI,
-      encodingType: this.camera.EncodingType.JPEG,
-      mediaType: this.camera.MediaType.PICTURE,
-      targetWidth: 400,
-      targetHeight: 400,
-      cameraDirection: 1
-    }
-    this.camera.getPicture(options).then((imageData) => {
-      // alert(imageData);
-      // imageData is either a base64 encoded string or a file URI
-      // If it's base64 (DATA_URL):
-      // let base64Image = 'data:image/jpeg;base64,' + imageData;
-      this.cropImage(imageData)
-    }, (err) => {
-      // Handle error
-    });
-  }
-
-  async selectImage() {
-    const actionSheet = await this.actionSheetController.create({
-      header: "Select Image source",
-      buttons: [{
-        text: 'Load from Library',
-        handler: () => {
-          this.pickImage(this.camera.PictureSourceType.PHOTOLIBRARY);
-        }
-      },
-      {
-        text: 'Use Camera',
-        handler: () => {
-          this.pickImage(this.camera.PictureSourceType.CAMERA);
-        }
-      },
-      {
-        text: 'Cancel',
-        role: 'cancel'
-      }
-      ]
-    });
-    await actionSheet.present();
-  }
-
-  cropImage(fileUrl) {
-   // alert(fileUrl);
-    this.crop.crop(fileUrl, { quality: 50 })
-      .then(
-        newPath => {
-          this.showCroppedImage(newPath.split('?')[0])
-        },
-        error => {
-          alert('Error cropping image' + JSON.stringify(error));
-        }
-      );
-  }
-
-  showCroppedImage(ImagePath) {
-    var copyPath = ImagePath;
-    var splitPath = copyPath.split('/');
-    var imageName = splitPath[splitPath.length - 1];
-    var filePath = ImagePath.split(imageName)[0];
-
-    this.file.readAsDataURL(filePath, imageName).then(base64 => {
-      // alert(base64);
-      this.profilePic = base64;
-      // this.isLoading = false;
-    }, error => {
-      //  alert('Error in showing image' + error);
-      // this.isLoading = false;
-    });
-  }
+  
 
   onSubmit() {
     //debugger;
