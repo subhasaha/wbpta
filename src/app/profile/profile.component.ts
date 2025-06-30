@@ -6,7 +6,6 @@ import { ApiService } from '../services/api/api.service';
 
 import { MessageService } from '../services/message/message.service';
 
-import { Crop } from '@ionic-native/crop/ngx';
 import { File } from '@ionic-native/file/ngx';
 
 @Component({
@@ -32,7 +31,6 @@ export class ProfileComponent implements OnInit {
   constructor(
     private messageService: MessageService,
     private apiService: ApiService,
-    private crop: Crop,
     private file: File,
     public actionSheetController: ActionSheetController,
   ) { }

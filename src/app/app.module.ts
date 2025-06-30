@@ -5,7 +5,6 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms'
 import { HttpClientModule } from '@angular/common/http';
 
 import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
-import { Crop } from '@ionic-native/crop/ngx';
 import { File } from '@ionic-native/file/ngx';
 
 import { Downloader } from '@ionic-native/downloader/ngx';
@@ -83,8 +82,7 @@ import { NgxQRCodeModule } from '@techiediaries/ngx-qrcode';
     { provide: RouterModule, useClass: IonicRouteStrategy },
     File,
     HTTP,
-    Crop,
-    
+  
     Downloader
   ],
   bootstrap: [AppComponent],
