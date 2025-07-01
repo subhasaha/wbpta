@@ -54,6 +54,7 @@ var link=document.createElement('a');
     const qrCodeElement = document.querySelector('.aclass');
     
     if (qrCodeElement) {
+      
       const canvas = qrCodeElement.querySelector('img');
       if (canvas) {
         const link = document.createElement('a');

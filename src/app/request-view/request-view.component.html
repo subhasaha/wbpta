@@ -1,53 +1,49 @@
 <ion-header no-border>
-    <ion-toolbar color="primary">
-        <ion-buttons slot="start">
-            <ion-menu-button></ion-menu-button>
-        </ion-buttons>
-        <ion-title>My Vehicles</ion-title>
-    </ion-toolbar>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>My Vehicles</ion-title>
+  </ion-toolbar>
 </ion-header>
 <ion-content fullscreen="true" slot="fixed">
   <ion-grid>
     <ion-row>
-        <ion-col>
-            <div >
-                <div class="loginPg">
-                  
-                    <div class="loginBx">
-                      <h1>My <span class="instk">Vehicles</span></h1>
-                       <ng-container *ngIf="celebRequests">
-                            <div *ngFor="let req of celebRequests; let i = index">
-                                <ion-card>
-                                    
-                                  
-                                  <ion-card-content>
-                                    
-                                    <p><b>Registration No : </b>{{req.vehicle_no}}</p>
-                                    <p><b>Reg Date : </b>{{req.reg_date}}</p>
-                                    <p><b>District : </b>{{req.district}}</p>
-                                    <ngx-qrcode 
-  [value]="req.vehicle_no"
-  cssClass="aclass"
-  [width]="400"
-  ariaLabel="Scan me for more information"
-  [version]="2"
-  [level]="'M'"
-  errorCorrectionLevel="L">
-</ngx-qrcode>
-<ion-button expand="full" (click)="downloadQrCode()">Download QR Code</ion-button>
-                              
-                                    
-                                  
-                                  </ion-card-content>
-                                </ion-card>
-                              </div>
-                      </ng-container>
-
-                        
-                    </div>
+      <ion-col>
+        <div>
+          <div class="loginPg">
+            <div class="loginBx">
+              <h1>My <span class="instk">Vehicles</span></h1>
+              <ng-container *ngIf="celebRequests">
+                <div *ngFor="let req of celebRequests; let i = index">
+                  <ion-card>
+                    <ion-card-content>
+                      <p><b>Registration No : </b>{{ req.vehicle_no }}</p>
+                      <p><b>Reg Date : </b>{{ req.reg_date }}</p>
+                      <p><b>District : </b>{{ req.district }}</p>
+                        <ngx-qrcode
+                          [value]="req.vehicle_details"
+                          cssClass="aclass"
+                          [width]="400"
+                          ariaLabel="Scan me for more information"
+                          [version]="7"
+                          [level]="'M'"
+                          [elementType]="'img'"
+                          errorCorrectionLevel="L"
+                        >
+                        </ngx-qrcode>
+                     
+                      <ion-button expand="full" (click)="downloadQrCode()"
+                        >Download QR Code</ion-button
+                      >
+                    </ion-card-content>
+                  </ion-card>
                 </div>
+              </ng-container>
             </div>
-        </ion-col>
+          </div>
+        </div>
+      </ion-col>
     </ion-row>
-</ion-grid>
+  </ion-grid>
 </ion-content>
