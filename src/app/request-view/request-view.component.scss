@@ -15,7 +15,12 @@ ion-content {
     background-repeat: no-repeat;
     background-position: center center;
 }
-
+::ng-deep .aclass {
+  position: absolute;
+    top: 200px;
+    left: 127px;
+    width: 35px;
+}
 
 /*==============Order Details=============*/
 .order-details-item{
