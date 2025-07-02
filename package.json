@@ -9,7 +9,8 @@
     "build": "ionic cordova build android",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "appflow:build": "cordova telemetry on"
   },
   "private": true,
   "dependencies": {
