@@ -4,7 +4,12 @@
   "author": "Ionic Framework",
   "homepage": "https://ionicframework.com/",
   "scripts": {
-    
+    "ng": "ng",
+    "start": "ionic serve",
+    "build": "ionic cordova build android",
+    "test": "ng test",
+    "lint": "ng lint",
+    "e2e": "ng e2e",
     "appflow:build": "cordova telemetry on"
   },
   "private": true,
@@ -24,6 +29,7 @@
     "@ionic-native/http": "^5.36.0",
     "@ionic/angular": "^6.0.0",
     "@techiediaries/ngx-qrcode": "^9.1.0",
+    "cordova-android": "14.0.1",
     "cordova-ios": "^7.0.1",
     "cordova-plugin-advanced-http": "^3.3.1",
     "cordova-plugin-whitelist": "~1.3.3",
@@ -52,7 +58,7 @@
     "@types/node": "^12.11.1",
     "@typescript-eslint/eslint-plugin": "5.3.0",
     "@typescript-eslint/parser": "5.3.0",
-    
+    "cordova-plugin-crop": "^0.4.0",
     "cordova-plugin-device": "^2.0.2",
     "cordova-plugin-file": "^6.0.2",
     "cordova-plugin-googleplus": "^8.5.2",
@@ -86,13 +92,15 @@
       "cordova-plugin-splashscreen": {},
       "cordova-plugin-ionic-webview": {},
       "cordova-plugin-ionic-keyboard": {},
-      
       "cordova-plugin-googleplus": {
         "PLAY_SERVICES_VERSION": "15.0.1"
       },
       "cordova-plugin-advanced-http": {
         "ANDROIDBLACKLISTSECURESOCKETPROTOCOLS": "SSLv3,TLSv1"
       }
-    }
+    },
+    "platforms": [
+      "android"
+    ]
   }
 }
